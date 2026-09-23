@@ -1,371 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinesh Kumar | Research &amp; Data Portfolio</title>
+<style>
+  :root{
+    --paper:#F1EFE6;
+    --paper-line:#DAD5C4;
+    --ink:#1B2333;
+    --ink-soft:#4A5063;
+    --teal:#2F6B5E;
+    --mustard:#B8862F;
+    --card:#FAF8F1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Source Serif Pro",serif;
+    line-height:1.55;
+  }
+  .sans{font-family:"Inter","Segoe UI",Helvetica,Arial,sans-serif;}
+  .mono{font-family:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;}
 
-  <title>Dinesh Kumar | Research & Data Portfolio</title>
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:700px;margin:0 auto;padding:0 28px;}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+  header.top{
+    position:sticky;top:0;z-index:10;
+    background:rgba(241,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--paper-line);
+  }
+  header.top .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;letter-spacing:0.2px;}
+  nav{display:flex;gap:22px;font-family:"Inter",sans-serif;font-size:13.5px;color:var(--ink-soft);}
+  nav a:hover{color:var(--teal);}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
+  .hero{padding:64px 0 48px;border-bottom:1px solid var(--paper-line);}
+  .hero .kicker{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--teal);
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:42px;font-weight:600;line-height:1.15;letter-spacing:-0.3px;
+    margin-bottom:14px;
+  }
+  .hero .role{
+    font-family:"Inter",sans-serif;font-size:16px;color:var(--ink-soft);
+    margin-bottom:22px;
+  }
+  .hero p{max-width:56ch;color:var(--ink-soft);font-size:16.5px;}
+  .hero-links{margin-top:26px;display:flex;gap:16px;font-family:"Inter",sans-serif;font-size:14px;}
+  .hero-links a{
+    border-bottom:1px solid var(--ink);padding-bottom:2px;
+  }
+  .hero-links a.primary{
+    border:1px solid var(--ink);padding:9px 16px;border-radius:2px;background:var(--ink);color:var(--paper);
+  }
+  .hero-links a.primary:hover{background:var(--teal);border-color:var(--teal);}
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #0f172a;
-      border-bottom: 1px solid #334155;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  section{padding:44px 0;border-bottom:1px solid var(--paper-line);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:"Inter",sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:0.4px;color:var(--ink-soft);
+    margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--paper-line);}
 
-    nav h2 {
-      color: #ffffff;
-    }
+  .about p{color:var(--ink-soft);max-width:60ch;font-size:16px;}
+  .about p + p{margin-top:12px;}
 
-    nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+  .tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+    border:1px solid var(--paper-line);padding:5px 10px;
+    color:var(--ink-soft);background:var(--card);
+  }
 
-    nav a:hover {
-      color: #ffffff;
-    }
+  .project{
+    padding:22px 0;border-top:1px solid var(--paper-line);
+    display:grid;grid-template-columns:1fr;gap:6px;
+  }
+  .project:first-of-type{border-top:none;padding-top:0;}
+  .project .row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;
+  }
+  .project h3{font-size:18.5px;font-weight:600;}
+  .project .link{
+    font-family:"Inter",sans-serif;font-size:13px;color:var(--teal);white-space:nowrap;
+  }
+  .project .link:hover{text-decoration:underline;}
+  .project p{color:var(--ink-soft);font-size:15px;max-width:58ch;}
+  .project .stack{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--mustard);
+    margin-top:4px;
+  }
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 70px 8%;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-    }
+  footer{padding:48px 0 64px;}
+  footer h2{margin-bottom:16px;}
+  .contact-list{font-family:"Inter",sans-serif;font-size:15px;color:var(--ink-soft);}
+  .contact-list div{margin-bottom:8px;}
+  .contact-list a:hover{color:var(--teal);}
+  .fine{
+    margin-top:36px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft);
+    opacity:0.7;
+  }
 
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .hero h2 {
-      font-size: 25px;
-      color: #94a3b8;
-      margin-bottom: 20px;
-      font-weight: normal;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #cbd5e1;
-      max-width: 700px;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      margin-right: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      border: 1px solid #475569;
-      color: #ffffff;
-      background: #1e293b;
-    }
-
-    .btn:hover {
-      background: #334155;
-    }
-
-    section {
-      padding: 75px 8%;
-    }
-
-    section h2 {
-      font-size: 32px;
-      color: #ffffff;
-      margin-bottom: 30px;
-    }
-
-    .about {
-      max-width: 850px;
-      color: #cbd5e1;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .skill {
-      background: #1e293b;
-      border: 1px solid #475569;
-      padding: 10px 16px;
-      border-radius: 20px;
-      color: #e2e8f0;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 25px;
-    }
-
-    .card h3 {
-      color: #ffffff;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
-
-    .card a {
-      color: #ffffff;
-      text-decoration: none;
-      border-bottom: 1px solid #64748b;
-    }
-
-    .contact {
-      background: #1e293b;
-    }
-
-    .contact p {
-      color: #cbd5e1;
-      margin: 8px 0;
-    }
-
-    .contact a {
-      color: #ffffff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #334155;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      nav h2 {
-        font-size: 18px;
-      }
-
-      nav div {
-        display: none;
-      }
-
-      .hero {
-        min-height: 75vh;
-        padding: 60px 6%;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero h2 {
-        font-size: 20px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 55px 6%;
-      }
-    }
-  </style>
+  @media (max-width:560px){
+    .hero h1{font-size:32px;}
+    nav{gap:14px;font-size:12.5px;}
+  }
+</style>
 </head>
-
 <body>
 
-  <nav>
-    <h2>Dinesh Kumar</h2>
-
-    <div>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Dinesh Kumar</div>
+    <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">RESEARCH &amp; DATA PORTFOLIO</div>
+    <h1>Hi, I'm Dinesh Kumar.</h1>
+    <div class="role">Market Research · Web Research · Lead Research · Data Entry</div>
+    <p>MSc Computer Science graduate who enjoys turning scattered information into clean, structured, decision-ready data — through web research, B2B lead research, LinkedIn research, and careful data collection.</p>
+    <div class="hero-links">
+      <a class="primary" href="#projects">View projects</a>
+      <a href="https://github.com/dinesh12-git" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="hero-content">
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>I'm an MSc Computer Science graduate interested in research and data-focused roles. I enjoy collecting accurate information, organising datasets, researching companies and competitors, and presenting findings in a clear, structured format.</p>
+    <p>My areas of interest include web research, market research, B2B lead generation, LinkedIn research, product research, data entry, and data cleaning. Previously, I worked as a Market Researcher at Lessburn in Coimbatore.</p>
+  </div>
+</section>
 
-      <h1>Hi, I'm Dinesh Kumar 👋</h1>
-
-      <h2>Market Research | Web Research | Lead Research | Data Entry</h2>
-
-      <p>
-        MSc Computer Science graduate focused on market research,
-        web research, B2B lead research, LinkedIn research,
-        data collection, and structured data management.
-      </p>
-
-      <div class="buttons">
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn" href="https://github.com/dinesh12-git" target="_blank">
-          GitHub
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-
-    <div class="about">
-      <p>
-        I am an MSc Computer Science graduate interested in research
-        and data-focused roles. I enjoy collecting accurate information,
-        organizing datasets, researching companies and competitors,
-        and presenting findings in a clear and structured format.
-      </p>
-
-      <br>
-
-      <p>
-        My areas of interest include web research, market research,
-        B2B lead generation, LinkedIn research, product research,
-        data entry, and data cleaning.
-      </p>
-    </div>
-  </section>
-
-  <section id="skills">
+<section id="skills">
+  <div class="wrap">
     <h2>Skills</h2>
-
-    <div class="skills">
-      <span class="skill">Web Research</span>
-      <span class="skill">Market Research</span>
-      <span class="skill">B2B Lead Research</span>
-      <span class="skill">LinkedIn Research</span>
-      <span class="skill">Lead Generation</span>
-      <span class="skill">Data Collection</span>
-      <span class="skill">Data Entry</span>
-      <span class="skill">Data Cleaning</span>
-      <span class="skill">Excel</span>
-      <span class="skill">Google Sheets</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Python</span>
+    <div class="tags">
+      <span class="tag">Web Research</span>
+      <span class="tag">Market Research</span>
+      <span class="tag">B2B Lead Research</span>
+      <span class="tag">LinkedIn Research</span>
+      <span class="tag">Lead Generation</span>
+      <span class="tag">Data Collection</span>
+      <span class="tag">Data Entry</span>
+      <span class="tag">Data Cleaning</span>
+      <span class="tag">Excel</span>
+      <span class="tag">Google Sheets</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Python</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="projects">
+<section id="projects">
+  <div class="wrap">
     <h2>Projects</h2>
 
-    <div class="projects">
-
-      <div class="card">
-        <h3>📊 B2B Lead Research & Prospect List</h3>
-
-        <p>
-          A structured B2B lead research project demonstrating
-          web research, LinkedIn research, data collection,
-          prospect qualification, and CSV data management.
-        </p>
-
-        <a href="https://github.com/dinesh12-git/b2b-lead-research-prospect-list"
-           target="_blank">
-          View on GitHub →
-        </a>
+    <div class="project">
+      <div class="row">
+        <h3>B2B Lead Research &amp; Prospect List</h3>
+        <a class="link" href="https://github.com/dinesh12-git/b2b-lead-research-prospect-list" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
-
-      <div class="card">
-        <h3>🍛 Market Research & Competitor Analysis</h3>
-
-        <p>
-          Market research project comparing competitor pricing,
-          customer ratings, delivery time, and price positioning
-          using a structured research dataset.
-        </p>
-
-        <a href="https://github.com/dinesh12-git/market-research-competitor-analysis"
-           target="_blank">
-          View on GitHub →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>📚 Library Book Reservation System</h3>
-
-        <p>
-          Full-stack library reservation project built with
-          FastAPI and React, demonstrating software development
-          and database concepts.
-        </p>
-
-        <a href="https://github.com/dinesh12-git/library-book-reservation-system"
-           target="_blank">
-          View on GitHub →
-        </a>
-      </div>
-
+      <p>A structured B2B lead research project demonstrating web research, LinkedIn research, data collection, prospect qualification, and CSV data management.</p>
+      <div class="stack">web research · linkedin research · csv</div>
     </div>
-  </section>
 
-  <section id="contact" class="contact">
+    <div class="project">
+      <div class="row">
+        <h3>Market Research &amp; Competitor Analysis</h3>
+        <a class="link" href="https://github.com/dinesh12-git/market-research-competitor-analysis" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <p>Market research project comparing competitor pricing, customer ratings, delivery time, and price positioning using a structured research dataset.</p>
+      <div class="stack">competitor analysis · pricing data</div>
+    </div>
+
+    <div class="project">
+      <div class="row">
+        <h3>Library Book Reservation System</h3>
+        <a class="link" href="https://github.com/dinesh12-git/library-book-reservation-system" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <p>Full-stack library reservation project built with FastAPI and React, demonstrating software development and database concepts.</p>
+      <div class="stack">fastapi · react · database</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
     <h2>Let's Connect</h2>
-
-    <p>📍 Coimbatore, Tamil Nadu, India</p>
-
-    <p>
-      💼 LinkedIn:
-      <a href="https://www.linkedin.com/in/dkraja" target="_blank">
-        linkedin.com/in/dkraja
-      </a>
-    </p>
-
-    <p>
-      💻 GitHub:
-      <a href="https://github.com/dinesh12-git" target="_blank">
-        github.com/dinesh12-git
-      </a>
-    </p>
-  </section>
-
-  <footer>
-    © 2026 Dinesh Kumar. All rights reserved.
-  </footer>
+    <div class="contact-list">
+      <div>📍 Coimbatore, Tamil Nadu, India</div>
+      <div>💼 <a href="https://www.linkedin.com/in/dkraja" target="_blank" rel="noopener">linkedin.com/in/dkraja</a></div>
+      <div>💻 <a href="https://github.com/dinesh12-git" target="_blank" rel="noopener">github.com/dinesh12-git</a></div>
+    </div>
+    <div class="fine">© 2026 Dinesh Kumar. All rights reserved.</div>
+  </div>
+</footer>
 
 </body>
 </html>
