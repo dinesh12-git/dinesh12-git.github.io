@@ -53,52 +53,100 @@
       display: flex;
       align-items: center;
       padding: 70px 8%;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background-color: #0f172a;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+      background-size: 42px 42px;
     }
 
     .hero-content {
       max-width: 850px;
     }
 
-    .hero h1 {
-      font-size: 52px;
-      color: #ffffff;
-      margin-bottom: 15px;
+    .hero-kicker {
+      width: 42px;
+      height: 3px;
+      background: #2dd4bf;
+      border-radius: 2px;
+      margin-bottom: 20px;
     }
 
-    .hero h2 {
-      font-size: 25px;
+    .hero h1 {
+      font-size: 50px;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 0;
+    }
+
+    .hero h1 .name {
+      display: block;
+      color: #2dd4bf;
+      font-weight: 700;
+      font-size: 56px;
+      margin-top: 4px;
+    }
+
+    .hero .subtitle {
       color: #94a3b8;
-      margin-bottom: 20px;
-      font-weight: normal;
+      font-size: 16px;
+      margin: 16px 0 20px;
+    }
+
+    .hero .subtitle .highlight {
+      color: #2dd4bf;
+      font-weight: 600;
+    }
+
+    .hero .subtitle .dot {
+      margin: 0 10px;
+      color: #475569;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 17px;
       color: #cbd5e1;
-      max-width: 700px;
+      max-width: 620px;
     }
 
     .buttons {
-      margin-top: 30px;
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      margin-right: 10px;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 30px;
       text-decoration: none;
       border: 1px solid #475569;
       color: #ffffff;
-      background: #1e293b;
+      background: transparent;
       transition: all 0.25s ease;
     }
 
     .btn:hover {
-      background: #334155;
       border-color: #2dd4bf;
+      color: #2dd4bf;
       box-shadow: 0 0 18px rgba(45, 212, 191, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #2dd4bf;
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      color: #0f172a;
+      box-shadow: 0 0 22px rgba(45, 212, 191, 0.55);
       transform: translateY(-2px);
     }
 
@@ -418,11 +466,15 @@
       }
 
       .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero h1 .name {
         font-size: 38px;
       }
 
-      .hero h2 {
-        font-size: 20px;
+      .hero .subtitle {
+        font-size: 14px;
       }
 
       .hero p {
@@ -458,9 +510,15 @@
   <section class="hero">
     <div class="hero-content">
 
-      <h1>Hi, I'm Dinesh Kumar 👋</h1>
+      <div class="hero-kicker"></div>
 
-      <h2>Market Research | Web Research | Lead Research | Data Entry</h2>
+      <h1>Hello, I'm<span class="name">Dinesh Kumar</span></h1>
+
+      <div class="subtitle">
+        MSc Graduate <span class="dot">·</span>
+        <span class="highlight">Sankara College - MSc'25</span> <span class="dot">·</span>
+        Research Enthusiast
+      </div>
 
       <p>
         MSc Computer Science graduate focused on market research,
@@ -469,9 +527,11 @@
       </p>
 
       <div class="buttons">
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn" href="https://github.com/dinesh12-git" target="_blank">
-          GitHub
+        <a class="btn btn-primary" href="#">
+          ⬇️ Download Resume
+        </a>
+        <a class="btn" href="#contact">
+          Let's Connect →
         </a>
       </div>
 
