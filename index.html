@@ -113,6 +113,62 @@
       color: #cbd5e1;
     }
 
+    /* Experience */
+    .experience-item {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 28px 30px;
+      max-width: 850px;
+    }
+
+    .experience-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .experience-head h3 {
+      color: #ffffff;
+      font-size: 19px;
+    }
+
+    .experience-head span {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .experience-company {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .experience-item ul {
+      list-style: none;
+      color: #cbd5e1;
+    }
+
+    .experience-item li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+
+    .experience-item li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #64748b;
+    }
+
+    .experience-item li:last-child {
+      margin-bottom: 0;
+    }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -210,6 +266,10 @@
       section {
         padding: 55px 6%;
       }
+
+      .experience-item {
+        padding: 22px 20px;
+      }
     }
   </style>
 </head>
@@ -221,6 +281,7 @@
 
     <div>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -268,6 +329,24 @@
         B2B lead generation, LinkedIn research, product research,
         data entry, and data cleaning.
       </p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="experience-item">
+      <div class="experience-head">
+        <h3>Market Researcher</h3>
+        <span>Oct 2022 – Aug 2023</span>
+      </div>
+      <div class="experience-company">Lessburn</div>
+
+      <ul>
+        <li>Conducted web research and collected data from multiple online sources</li>
+        <li>Compiled and validated datasets used for business and pricing insights</li>
+        <li>Reviewed data regularly to catch errors before it was shared further</li>
+      </ul>
     </div>
   </section>
 
